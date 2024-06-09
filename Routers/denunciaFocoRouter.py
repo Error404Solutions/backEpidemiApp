@@ -49,7 +49,7 @@ async def listarDenunciasUbic():
         denunciaFList = [{"ubicacion": row[0], "count": row[1]} for row in result]
         return denunciaFList
 
-
+#hallar las denuncias que tiene una ubicacion 
 @denunciaF.get("/api/denunciaF/{ubicacion_name}", response_model=List[denunciaFocoSchema])
 async def obtenerFocosUbicacion(ubicacion_name: str):
     with engine.connect() as conn:
