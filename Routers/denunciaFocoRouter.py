@@ -34,6 +34,8 @@ async def listarDenunciasF():
 class DenunciaFocoCountSchema(BaseModel):
     ubicacion: str
     count: int
+    distancia: int = 5
+    
 
 @denunciaF.get("/api/denunciaFocoUbicacion", response_model=List[DenunciaFocoCountSchema])
 async def listarDenunciasUbic():
